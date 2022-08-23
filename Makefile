@@ -1,6 +1,6 @@
 
-sherpa_install_dir := $(shell python3 -c 'import os; import sherpa; print(os.path.dirname(sherpa.__file__))')
-sherpa_cxx_flags := $(shell python3 -c 'import os; import sherpa; print(sherpa.cxx_flags)')
+sherpa_install_dir := $(shell python -c 'import os; import sherpa; print(os.path.dirname(sherpa.__file__))')
+sherpa_cxx_flags := $(shell python -c 'import os; import sherpa; print(sherpa.cxx_flags)')
 
 $(info sherpa_install_dir: $(sherpa_install_dir))
 $(info sherpa_cxx_flags: $(sherpa_cxx_flags))
