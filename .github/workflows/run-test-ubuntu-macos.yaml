@@ -76,7 +76,6 @@ jobs:
 
       - name: Test decoding a single file
         shell: bash -l {0}
-        shell: bash
         run: |
           ./test_decode_files \
             ./icefall-asr-librispeech-pruned-transducer-stateless3-2022-05-13/exp/cpu_jit.pt \
@@ -84,7 +83,7 @@ jobs:
             ./icefall-asr-librispeech-pruned-transducer-stateless3-2022-05-13/test_wavs/1089-134686-0001.wav
 
       - name: Test decoding multiple files
-        shell: bash
+        shell: bash -l {0}
         run: |
           ./test_decode_files \
             ./icefall-asr-librispeech-pruned-transducer-stateless3-2022-05-13/exp/cpu_jit.pt
