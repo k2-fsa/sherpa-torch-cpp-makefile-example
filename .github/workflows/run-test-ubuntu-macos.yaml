@@ -55,7 +55,15 @@ jobs:
       - name: Build
         shell: bash
         run: |
+          conda list
+          which sherpa
+          which sherpa-version
+          sherpa-version
+          which python
           which python3
+
+          python --version
+          python3 --version
 
           make VERBOSE=1
           ./test_decode_files
