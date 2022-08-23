@@ -8,6 +8,7 @@ $(info sherpa_cxx_flags: $(sherpa_cxx_flags))
 CXXFLAGS := -I$(sherpa_install_dir)/include
 CXXFLAGS += -Wl,-rpath,$(sherpa_install_dir)/lib
 CXXFLAGS += $(sherpa_cxx_flags)
+CXXFLAGS += -std=c++14
 
 LDFLAGS := -L $(sherpa_install_dir)/lib -lsherpa_offline_recognizer
 
