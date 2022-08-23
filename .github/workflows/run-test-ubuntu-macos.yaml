@@ -53,7 +53,7 @@ jobs:
           conda install -c k2-fsa -c k2-fsa-sherpa -c kaldifeat -c kaldi_native_io -c pytorch cpuonly k2 sherpa kaldifeat kaldi_native_io pytorch=${{ matrix.torch }} python=${{ matrix.python-version }}
 
       - name: Build
-        shell: bash
+        shell: bash -l {0}
         run: |
           conda list
           which sherpa
@@ -75,6 +75,7 @@ jobs:
           git clone https://huggingface.co/csukuangfj/icefall-asr-librispeech-pruned-transducer-stateless3-2022-05-13
 
       - name: Test decoding a single file
+        shell: bash -l {0}
         shell: bash
         run: |
           ./test_decode_files \
